@@ -15,13 +15,12 @@ namespace Lab_8
         public Blue_2(string delet, string input) : base(input)
         {
             _delet = delet;
-            _output = input;
+            _output = null;
         }
         public string Output => _output;
         public override void Review()
         {
-            if (string.IsNullOrEmpty(_delet) || string.IsNullOrEmpty(_output)) return;
-            string[] words = _output.Split(' ');
+            string[] words = Input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var result = new StringBuilder();
             foreach (string word in words)
             {
@@ -39,11 +38,10 @@ namespace Lab_8
                 }
             }
 
-            _output = result.ToString();
+            _output = result.ToString().Trim();
         }
         public override string ToString()
         {
-            if (Input == null || Input == "") return null;
             return _output;
         }
     }

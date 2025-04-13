@@ -16,6 +16,7 @@ namespace Lab_8
         }
         public override void Review()
         {
+            if (String.IsNullOrEmpty(Input)) return;
             var words = Input.Split(' ');
             int coint = 0;
             var currentLine = new StringBuilder();
@@ -47,6 +48,7 @@ namespace Lab_8
         }
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(Input) || _output == null) return null;
             return string.Join(Environment.NewLine, _output);
         }
     }

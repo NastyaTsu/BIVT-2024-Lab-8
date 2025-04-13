@@ -17,10 +17,11 @@ namespace Lab_8
         }
         public override void Review()
         {
+            if (String.IsNullOrEmpty(this.Input)) return;
             string numbers = "";
             foreach (char simvol in Input)
             {
-                if (char.IsDigit(simvol))
+                if (char.IsDigit(simvol) && simvol != null)
                 {
                     numbers += simvol;
                 }

@@ -74,6 +74,7 @@ namespace Lab_8
 
         public override string ToString()
         {
+            if (_output == null) return null;
             var sb = new StringBuilder();
             foreach (var pair in _output)
             {
