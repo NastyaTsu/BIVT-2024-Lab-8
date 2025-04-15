@@ -21,7 +21,7 @@ namespace Lab_8
             string numbers = "";
             foreach (char simvol in Input)
             {
-                if (char.IsDigit(simvol) && simvol != null)
+                if (char.IsDigit(simvol))
                 {
                     numbers += simvol;
                 }
@@ -50,7 +50,7 @@ namespace Lab_8
             }
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return "" + _output;
         }

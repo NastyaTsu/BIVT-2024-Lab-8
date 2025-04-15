@@ -12,7 +12,7 @@ namespace Lab_8
         private string _delet;
         private string _output;
         public string Delet => _delet;
-        public Blue_2(string delet, string input) : base(input)
+        public Blue_2(string input, string delet) : base(input)
         {
             _delet = delet;
             _output = null;

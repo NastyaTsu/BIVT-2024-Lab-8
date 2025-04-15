@@ -16,7 +16,11 @@ namespace Lab_8
         }
         public override void Review()
         {
-            if (String.IsNullOrEmpty(Input)) return;
+            if (String.IsNullOrEmpty(Input))
+            {
+                _output = null;
+                return;
+            }
             var words = Input.Split(' ');
             int coint = 0;
             var currentLine = new StringBuilder();
