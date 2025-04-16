@@ -13,7 +13,7 @@ namespace Lab_8
         public (char, double)[] Output => _output;
         public Blue_3(string input) : base(input)
         {
-            _output = new (char, double)[0];
+            _output = null;
         }
         private int kol_words(string input)
         {
@@ -28,11 +28,7 @@ namespace Lab_8
         }
         public override void Review()
         {
-            if (String.IsNullOrEmpty(Input))
-            {
-                _output = null;
-                return;
-            }
+            if (String.IsNullOrEmpty(Input)) return;
             int kolvo = 0;
             string[] words = Input.Split(' ', '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/');
             if (words.Length == 0) return;

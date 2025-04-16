@@ -12,15 +12,12 @@ namespace Lab_8
         public string[] Output => _output;
         public Blue_1(string input) : base(input) 
         {
-            _output = new string[300];
+            _output = null;
         }
         public override void Review()
         {
-            if (String.IsNullOrEmpty(Input))
-            {
-                _output = null;
-                return;
-            }
+            if (String.IsNullOrEmpty(Input)) return;
+            string[] resalt = new string[500];
             var words = Input.Split(' ');
             int coint = 0;
             var currentLine = new StringBuilder();
@@ -37,7 +34,7 @@ namespace Lab_8
                 }
                 else
                 {
-                    _output[coint] = currentLine.ToString(); 
+                    resalt[coint] = currentLine.ToString(); 
                     coint++;
                     currentLine.Clear();
                     currentLine.Append(word); 
@@ -45,14 +42,16 @@ namespace Lab_8
             }
             if (currentLine.Length > 0)
             {
-                _output[coint] = currentLine.ToString();
+                resalt[coint] = currentLine.ToString();
                 coint++;
             }
-            Array.Resize(ref _output, coint);
+            Array.Resize(ref resalt, coint);
+            _output = resalt;
+                
         }
         public override string ToString()
         {
-            if (String.IsNullOrEmpty(Input) || _output == null) return null;
+            if (_output == null || _output.Length == 0) return null;
             return string.Join(Environment.NewLine, _output);
         }
     }
