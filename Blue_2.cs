@@ -11,7 +11,6 @@ namespace Lab_8
     {
         private string _delet;
         private string _output;
-        public string Delet => _delet;
         public string Output => _output;
         public Blue_2(string input, string delet) : base(input)
         {
